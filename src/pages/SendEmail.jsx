@@ -1,37 +1,24 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Layout from '../containers/Layout';
-import Home from '../pages/Home';
-import Login from '../pages/Login';
-import PasswordRecovery from '../pages/PasswordRecovery';
-import SendEmail from '../pages/SendEmail';
-import NewPassword from '../pages/NewPassword';
-import MyAccount from '../pages/MyAccount';
-import CreateAccount from '../pages/CreateAccount';
-import Checkout from '../pages/Checkout';
-import Orders from '../pages/Orders';
-import NotFound from '../pages/NotFound';
-import '../styles/global.css';
+import '../styles/SendEmail.scss';
 
-const App = () => {
+const SendEmail = () => {
 	return (
-		<BrowserRouter>
-			<Layout>
-				<Routes>
-					<Route exact path="/" component={Home} />
-					<Route exact path="/login" component={Login} />
-					<Route exact path="/password-recovery" component={PasswordRecovery} />
-					<Route exact path="/send-email" component={SendEmail} />
-					<Route exact path="/new-password" component={NewPassword} />
-					<Route exact path="/account" component={MyAccount} />
-					<Route exact path="/signup" component={CreateAccount} />
-					<Route exact path="/checkout" component={Checkout} />
-					<Route exact path="/orders" component={Orders} />
-					<Route path="*" component={NotFound} />
-				</Routes>
-			</Layout>
-		</BrowserRouter>
+		<div className="SendEmail">
+			<div className="form-container">
+				<img src="./logos/logo_yard_sale.svg" alt="logo" className="logo" />
+				<h1 className="title">Email has been sent!</h1>
+				<p className="subtitle">Please check your inbox for instructions on how to reset the password</p>
+				<div className="email-image">
+					<img src="./icons/email.svg" alt="email" />
+				</div>
+				<button className="primary-button login-button">Login</button>
+				<p className="resend">
+					<span>Didn't receive the email?</span>
+					<a href="/">Resend</a>
+				</p>
+			</div>
+		</div>
 	);
 }
 
-export default App;
+export default SendEmail;
